@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="create-product.css">
+    <title>Create product</title>
+</head>
+<body>
+   
+<div class="page-layout">
+
+    <header class="header">
+      <h3>CREATE PRODUCTS</h3>
+    </header>
+
+    <aside class="create-product-aside">
+    </aside>
+    <!-- Start Of MAIN CONTENT -->
+    <main class="main">
+        <!-- Start of product informations -->
+
+        <div class="inputs-container">
+                <!-- Start of product name and date to expire -->
+            <div class="name-date-section">
+                <div class="name">
+                    <label for="product-name">Product name:</label>
+                    <br>
+                    <input type="text" id="product-name">
+                    </div>
+    
+                    <div class="date">
+                     <label for="date-label">Date:</label>
+                     <br>
+                     <input type="date" id="date-label">
+                    </div>
+               </div>
+            <!-- End of product name and expired-date -->
+            
+            <!-- Start of Main and sub-product units and conversion rate-->
+            <div class="units">
+                <div>
+                    <label for="main-unit">Main unit:</label>
+                    <br>
+                    <input type="text" id="main-unit">
+                </div>
+                <div>
+                  <label for="sub-unit">Sub unit:</label>
+                    <br>
+                   <input type="text" id="sub-unit" value="pc">
+                </div>
+                <div>
+                    <label for="conversion-rate">Conversion rate:</label>
+                    <br>
+                    <input type="text" id="conversion-rate" value="1">
+                </div>
+            </div>
+            <!-- End of Main and sub-product units and conversion rate-->
+           
+            <!-- Start of stock section-->
+            <div class="stock-section">
+                 <div>
+                    <label for="stock">Stock per main-unit:</label>
+                    <br>
+                    <input type="text" id="stock-per-main-unit">
+                 </div>
+
+                 <div>
+                    <label for="stock">Stock per sub-unit:</label>
+                    <br>
+                    <input type="text" id="stock-per-sub-unit" value="1">
+                 </div>
+                 <div>
+                    <label for="stock">Stock alert:</label>
+                    <br>
+                    <input type="text" id="stock-alert" value="1">
+                  </div>
+             </div>
+            <!-- End of Stock section -->
+    
+            <!-- Pricing section -->
+                <div class="pricing-section">
+                    <!-- Start of Buy price section-->
+                    <div class="buy-price-section">
+
+                        <div>
+                          <label for="buy-price-per-main-unit">Buy price per main-unit:</label>
+                            <br>
+                            <input type="text" id="buy-price-per-main-unit">
+                        </div>
+
+                        <div>
+                            <label for="buy-price-per-sub-unit">Buy price per sub-unit:</label>
+                            <br>
+                            <input type="text" id="buy-price-per-sub-unit" value="1">
+                        </div>
+                    </div>
+         
+                    <!-- End of Buy price section -->
+                    <!-- Start of Sale price section -->
+                        <div class="sale-price-section">
+                        <div>
+                            <label for="sale-price-per-main-unit">Sale price per main-unit:</label>
+                            <br>
+                            <input type="text" id="sale-price-per-main-unit">
+                        </div>
+                        <div>
+                            <label for="sale-price-per-sub-unit">Sale price per sub-unit:</label>
+                            <br>
+                            <input type="text" id="sale-price-per-sub-unit" value="1">
+                        </div>
+                    </div>
+                    <!-- End sale price section -->
+                </div>
+                <!-- End Of pricing section -->
+    
+            <!-- Save product button -->
+            <button id="save-button" type="button">Create product</button>
+        </div>
+        <!-- End of product informations -->
+    </main>
+    <!-- End Of Main Content -->
+</div>
+
+    <script src="./create-product.js" type="module"></script>
+</body>
+</html>

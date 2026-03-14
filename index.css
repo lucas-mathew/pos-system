@@ -1,0 +1,160 @@
+  *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body{
+        background-color: rgba(5, 5, 5, 0.6);
+        color: rgb(230, 224, 224);
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        /* opacity: 0.99; */
+    }
+
+   .page-layout{
+        display: grid;
+        grid-template-areas: 
+        "aside header"
+        "aside simple-dash-board"
+        "aside main"
+        ;
+
+        grid-template-columns:240px 1fr;
+
+     }
+
+    .aside{
+        grid-area: aside;
+        border-right: 1px solid gray;
+        position: sticky;
+        top: 0;
+        height: 100vh; /* Full viewport height */
+        overflow-y: auto;
+        background-color: rgb(17, 17, 17);
+       
+    }
+
+    .header{
+        grid-area: header;
+        border-left: 1px solid gray;
+        padding:20px 20px;
+        background-color: rgb(20, 18, 18);
+        position: sticky;
+        top: 0; /* Sticks to top of main content area */
+        z-index: 1; 
+        height: 62px;
+        border-bottom: 2px solid rgb(100, 97, 97);
+    }
+    
+    .main{
+        grid-area: main;
+        width: 100%;
+        overflow-y: auto; /* Makes main content scrollable */
+        height: 100vh;
+        position: relative;
+        background-color: rgb(5, 5, 5);
+        /* opacity: 0.9; */
+    }
+    
+    .main h3{
+        margin:auto;
+        width: 200px;
+    }
+    
+    .header h3{
+        margin-left: 10px;
+        opacity: 1;
+    }
+    
+
+   .nav-links{
+    display: grid;
+    margin-top: 20px;
+    margin-left: 20px;
+    row-gap: 20px;
+   }
+
+   .nav-links a{
+      text-decoration: none;
+      color: white;
+   }
+ 
+   .aside-items h3{
+    margin-left: 20px;
+    margin-top: 29px;
+    /* display: none;*/
+}
+
+.main-store{
+    border-bottom: 1px solid;
+    padding-bottom: 10px;
+   }
+
+ 
+ .total-capital,
+ .sales
+ {
+    padding:40px 40px;
+    width: 250px;
+    height: 130px;
+    text-align: center;
+    margin: 20px 20px;
+    opacity: 1;
+    font-size: 19px;
+    border-radius: 10px;
+    border: 1px solid rgb (38, 73, 228);
+    border: 1px solid rgb(56, 55, 55);
+   background-color: rgba(100, 113, 124, 0.1);
+
+ }
+ 
+ .total-profit {
+    padding:40px 40px;
+    width: 250px;
+    height: 130px;
+    text-align: center;
+    margin: 20px 20px;
+    opacity: 1;
+    font-size: 19px;
+    border-radius: 10px;
+    border: 1px solid rgb (38, 73, 228);
+    border: 1px solid rgb(56, 55, 55);
+   background-color: rgba(100, 113, 124, 0.1);
+ }
+
+  .total-products{
+    padding:40px 40px;
+    width: 250px;
+    height: 130px;
+    text-align: center;
+    margin: 20px 20px;
+    opacity: 1;
+    font-size: 19px;
+    border-radius: 10px;
+    border: 1px solid rgb(56, 55, 55);
+    background-color: rgba(100, 110, 119, 0.1);
+    /* box-shadow: 2px 2px 2px rgb(75, 75, 77), -2px -2px 2px rgb(44, 43, 43); */
+ }
+
+
+ .dash-board{
+   display: grid;
+   grid-template-columns:repeat(4, 1fr);
+   flex-wrap: nowrap;
+   background-color: rgb(7, 7, 7);
+ }
+
+
+ .total-products button,
+ .total-capital button,
+ .total-profit button,
+ .sales button{
+    width: 150px;
+    margin-top: 10px;
+    padding: 6px 20px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+ }
+

@@ -1,0 +1,233 @@
+  *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body{
+        background-color: rgb(20, 17, 17);
+        color: rgb(230, 224, 224);
+        font-family: "Inter", sans-serif;
+        opacity: 0.99;
+    }
+
+   .page-layout{
+        display: grid;
+        grid-template-areas: 
+        "aside header"
+        "aside simple-dash-board"
+        "aside main"
+        ;
+
+        grid-template-columns:240px 1fr;
+
+     }
+
+    .aside{
+        grid-area: aside;
+        border-right: 1px solid rgb(72, 70, 70);
+        position: sticky;
+        top: 0;
+        height: 100vh; /* Full viewport height */
+        overflow-y: auto;
+         background:#121212;
+        color:white;      
+    }
+
+    .header{
+        grid-area: header;
+        border-left: 1px solid rgb(48, 47, 47);
+        padding:20px 20px;
+        background-color: rgb(17, 17, 17);
+        position: sticky;
+        top: 0; /* Sticks to top of main content area */
+        z-index: 1; 
+        height: 62px;
+        border-bottom: 1px solid rgb(50, 48, 48);
+    }
+    
+    .main{
+        grid-area: main;
+        width: 100%;
+        overflow-y: auto; /* Makes main content scrollable */
+        height: 100vh;
+        position: relative;
+        background-color: rgb(6, 6, 6);
+    }
+    
+    .header h3{
+        margin-left: 10px;
+        color: rgb(224, 84, 2);
+    }
+    
+
+   .nav-links{
+    display: grid;
+    margin-top: 20px;
+    margin-left: 20px;
+    row-gap: 20px;
+   }
+
+   .nav-links a{
+      text-decoration: none;
+      color: white;
+   }
+ 
+   .aside-items h3{
+    margin-left: 20px;
+    margin-top: 25px;
+    /* display: none; */
+}
+
+.main-store{
+    border-bottom: 1px solid rgb(74, 70, 70);
+    padding-bottom: 10px;
+   }
+
+   .products-top-bar{
+    display: none;
+   }
+
+   .products-informations{
+     margin-left: 4px;
+     margin-top: 70px;
+     /* padding: 20px 20px; */
+     background-color: rgb(6, 6, 6);
+     border: 1px solid rgb(50, 49, 49);
+     border-radius: 8px;
+   }
+  .product-header{
+    display: grid;
+    grid-template-columns:repeat(7,1fr);
+    align-items: center;
+    padding: 18px 10px;
+    column-gap: 15px;
+    justify-items:flex-start;
+    font-size: 18px;
+    opacity: 1;
+    border-bottom: 1px solid rgb(40, 38, 38);
+  }
+
+
+  .rows{
+    display: grid;
+    grid-template-columns:repeat(7,1fr);
+    align-items:center;
+    padding: 10px 10px;
+    column-gap: 15px;
+    justify-items: flex-start;
+    opacity: 0.9;
+    font-size: 17px;
+    margin-top: 2px;
+    border-bottom: 2px solid rgb(16, 15, 15);
+    background-color: rgb(13, 12, 12);
+    box-shadow: 1px 1px 2px rgb(52, 50, 50);
+  }
+
+  .rows:hover{
+    background-color: rgb(22, 21, 21);
+  }
+ 
+ .product{
+    width: 280px;
+ }
+
+ /* .capital{
+    width: 100px;
+ }
+
+ .profit{
+    width: 80px;
+ }
+
+ .stock{
+    width: 40px;
+ }
+
+ .sale-price{
+    width: 90px;
+ }
+ .buy-price{
+    width: 90px;
+ } */
+
+ .edit-btn{
+    padding: 6px 12px;
+    background-color: rgb(20, 71, 238);
+    opacity: 1;
+    border: none;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+ }
+
+ .delete-btn{
+     padding: 6px 6px;
+    background-color: rgb(173, 5, 5);
+    opacity: 1;
+    border: none;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+ }
+
+ .actions{
+    display: flex;
+    gap: 6px;
+    width: 100px;
+ }
+
+#search-product{
+   height: 35px;
+   width: 200px;
+   background-color: rgb(13, 12, 12);
+   margin: 10px;
+   border: 1px solid rgb(114, 111, 111);
+   border-radius: 8px;
+   padding:0 30px;
+   transition: 0.4s;
+}
+
+#search-product:focus{
+  outline-color:rgb(45, 43, 43);
+  opacity: 0.8;
+  color: white;
+  font-size: 18px;
+  width: 280px;
+}
+
+
+.search-section{
+   position: relative;
+   width: 400px;
+}
+
+#search-icon{
+   position: absolute;
+   top: 16px;
+   left: 15px;
+   color:rgb(163, 162, 162);
+   width: 20px;
+}
+
+.create-product-link{
+   width: 200px;
+   position: absolute;
+   right: 0;
+   top:13px ;
+  
+}
+
+.create-product-link a{
+   padding: 10px 10px;
+   text-decoration: none;
+   color: white;
+   text-align: center;
+   /* background-color:#4CAF50; */
+	 background-color: #3B82F6;
+
+}

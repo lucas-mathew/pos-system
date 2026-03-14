@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="products.css">
+      <title>Point of sale</title>
+    </head>
+    <body>
+      <div class="page-layout">
+        <header class="header">
+          <div class="title">
+            <h3>POINT OF SALE</h3>
+          </div>
+        </header>
+        
+        <aside class="aside"></aside>
+        <!-- Start Of MAIN CONTENT -->
+        <main class="main">
+          <!-- Start of top-bar -->
+          <div class="products-top-bar">
+            <div>
+              <span>Total products:</span>
+              <span id="total-products"></span>
+            </div>
+          </div>
+          
+          <!-- End of top bar -->
+          
+          <!-- Start products informations -->
+          <div class="products-informations">
+            <div class="search-section">
+              <input type="search" id="search-product">
+              <i data-lucide="search" id="search-icon"></i>
+            </div>
+            
+            <div class="product-header">
+              <div class="product">Product</div>
+              <div class="stock">Stock</div>
+              <div class="buy-price">Buy price</div>
+              <div class="sale-price">Sale price</div>
+              <div class="profit">Profit</div>
+              <div class="capital">Capital</div>
+							<div class="actions">Action</div>
+            </div>
+            
+            <!-- product 1 -->
+            <div class="products-info-container">
+            </div>
+            
+            
+          </main>
+          <div class="empty-container"></div>
+          <!-- End Of Main Content -->
+        </div>
+        <script src="./cart.js" type="module"></script>
+        
+     <script src="./icons.js"></script>
+    <script>
+    lucide.createIcons();
+   </script>
+</body>
+</html>
