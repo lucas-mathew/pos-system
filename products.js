@@ -43,7 +43,15 @@
           </div>
          `;
 		}
-		productsContainer.innerHTML = productsHTML;
+
+		if(productsHTML !== ""){
+			productsContainer.innerHTML = productsHTML;
+			productsContainer.classList.remove("empty-container")
+		}else{
+			productsContainer.classList.add("empty-container")
+			productsContainer.innerHTML = "No product found"
+		}
+     
 		}
 		renderProducts(products);
 

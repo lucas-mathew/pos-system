@@ -7,6 +7,12 @@
 						    new URLSearchParams(window.location.search)
 
 								then i store productId = Number(new URLSearchParams(window.location.search).get("id"))
-								
+
+				Lessons
+				1.Array of objects
+        2.Functions
+				3.localStorage
+				4.Module
+
 
       
