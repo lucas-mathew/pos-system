@@ -5,7 +5,7 @@
 			saveCart,
 		} from "./data/storage.js";
 		import { renderPage } from "./aside.js";
-
+		import{calculateTotalProducts,updateStock} from "./utils/calculations.js"
 		//  Aside
 		document.querySelector(".aside").innerHTML = renderPage();
 
@@ -22,7 +22,7 @@
 						    <div class="product">${product.pName}</div>
 								<div class="stock">
 									<span>${product.pStockPerMainUnit}${product.pMainUnit}</span>
-									<span>${product.pStockPerMainUnit}${product.pMainUnit}</span>
+									<span>${product.pStockPerSubUnit}${product.pSubUnit}</span>
 								</div>
 
 								<div class="sales-buttons">
@@ -33,7 +33,13 @@
 							</div>
 						 `;
 			}
-			productsContainer.innerHTML = productsHTML;
+					if(productsHTML !== ""){
+					productsContainer.innerHTML = productsHTML;
+					productsContainer.classList.remove("empty-container")
+				}else{
+					productsContainer.classList.add("empty-container")
+					productsContainer.innerHTML = "No product found"
+				}
 		}
 
 			renderProducts(products);
@@ -55,43 +61,46 @@
 		
 
 
-		const cart = getCart()
-		document.querySelectorAll(".sale-price-per-main-button")
-		  .forEach(button => {
-				button.addEventListener("click", (event) => {
-				  let productId = Number(event.target.dataset.productId)
-          const products = getProducts()
-					const product = products.find(p => p.id === productId)
-					console.log(product.pName)
+		const cart = getCart();
 
-					 let matchingItem;
-       
-					  cart.forEach(item => {
-							if(productId === item.productId){
-								matchingItem = item
-							}
-						})
+	document.querySelectorAll(".sale-price-per-main-button")
+	.forEach(button => {
 
-						if(matchingItem){
-							matchingItem.quantity ++
-						}else{
-							cart.push( {
-							quantity:1,
-							productId:productId,
-              productName:product.pName
-							})
-						}
+		button.addEventListener("click", (event) => {
 
-						let cartQuantity = 0;
+			const productId = event.target.dataset.productId;
 
-						cart.forEach(cartItem => {
-							cartQuantity += cartItem.quantity;
-						})
+			const products = getProducts();
+			const product = products.find(p => p.id === productId);
 
-						console.log(cartQuantity)
-						console.log(cart.length)
+			const matchingItem = cart.find(item => item.productId === productId);
+
+			if (matchingItem) {
+
+				matchingItem.quantity++;
+
+			} else {
+
+				cart.push({
+					quantity: 1,
+					productId: productId,
 					
-          console.log(cart)
-					saveCart(cart)
-				})
-			})
+				});
+
+			}
+
+			let cartQuantity = 0;
+
+			cart.forEach(cartItem => {
+				cartQuantity += cartItem.quantity;
+			});
+
+			console.log(cart);
+
+			saveCart(cart);
+
+		});
+
+	});
+
+				document.querySelector("#total-products").innerHTML = calculateTotalProducts()

@@ -1,4 +1,4 @@
-import { getProducts } from "../data/storage.js";
+import { getProducts, saveProducts } from "../data/storage.js";
 
 export function calculateProfit(stock, salePrice, buyPrice) {
   stock = Number(stock);
@@ -65,8 +65,13 @@ export function updateStock(productId, quantitySold) {
     if (product.id === productId) {
       return {
         ...product,
-        stock: product.pStockPerMainUnit - quantitySold,
+        pStockPerMainUnit: product.pStockPerMainUnit - Number(quantitySold),
       };
     }
+    
+  return product
+
   });
+	saveProducts(updateProduct)
+
 }

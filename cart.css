@@ -1,168 +1,191 @@
- *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body{
-        background-color: rgb(20, 17, 17);
-        color: rgb(230, 224, 224);
-        font-family: "Inter", sans-serif;
-        opacity: 0.99;
-    }
-
-   .page-layout{
-        display: grid;
-        grid-template-areas: 
-        "aside header"
-        "aside simple-dash-board"
-        "aside main"
-        ;
-
-        grid-template-columns:240px 1fr;
-
-     }
-
-    .aside{
-        grid-area: aside;
-        border-right: 1px solid rgb(72, 70, 70);
-        position: sticky;
-        top: 0;
-        height: 100vh; /* Full viewport height */
-        overflow-y: auto;
-         background:#121212;
-        color:white;      
-    }
-
-    .header{
-        grid-area: header;
-        border-left: 1px solid rgb(48, 47, 47);
-        padding:20px 20px;
-        background-color: rgb(17, 17, 17);
-        position: sticky;
-        top: 0; /* Sticks to top of main content area */
-        z-index: 1; 
-        height: 62px;
-        border-bottom: 1px solid rgb(50, 48, 48);
-    }
-    
-    .main{
-        grid-area: main;
-        width: 100%;
-        overflow-y: auto; /* Makes main content scrollable */
-        height: 100vh;
-        position: relative;
-        background-color: rgb(6, 6, 6);
-    }
-    
-    .header h3{
-        margin-left: 10px;
-        color: rgb(224, 84, 2);
-    }
-    
-
-   .nav-links{
-    display: grid;
-    margin-top: 20px;
-    margin-left: 20px;
-    row-gap: 20px;
-   }
-
-   .nav-links a{
-      text-decoration: none;
-      color: white;
-   }
- 
-   .aside-items h3{
-    margin-left: 20px;
-    margin-top: 25px;
-    /* display: none; */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.main-store{
-    border-bottom: 1px solid rgb(74, 70, 70);
-    padding-bottom: 10px;
-   }
+body {
+  background-color: rgb(20, 17, 17);
+  color: rgb(230, 224, 224);
+  font-family: "Inter", sans-serif;
+  opacity: 0.99;
+}
 
-	 .products-top-bar{
-		display: none;
-	 }
-	 
-	.products-informations{
-     margin-left: 4px;
-     margin-top: 70px;
-     padding: 20px 20px;
-     background-color: rgb(6, 6, 6);
-     /* border: 1px solid rgb(50, 49, 49); */
-     border-radius: 8px;
-   }
+.page-layout {
+  display: grid;
+  grid-template-areas:
+    "aside header"
+    "aside simple-dash-board"
+    "aside main";
 
+  grid-template-columns: 218px 1fr;
+}
 
-.products-info-container{
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	width: 650px;
-	row-gap: 20px;
+.aside {
+  grid-area: aside;
+  border-right: 1px solid rgb(72, 70, 70);
+  position: sticky;
+  top: 0;
+  height: 100vh; /* Full viewport height */
+  overflow-y: auto;
+  background: #121212;
+  color: white;
+	
+}
+
+.header {
+  grid-area: header;
+  border-left: 1px solid rgb(48, 47, 47);
+  padding: 20px 20px;
+  background-color: rgb(17, 17, 17);
+  position: sticky;
+  top: 0; /* Sticks to top of main content area */
+  z-index: 1;
+  height: 62px;
+  border-bottom: 1px solid rgb(50, 48, 48);
+}
+
+.main {
+  grid-area: main;
+  width: 100%;
+  overflow-y: auto; /* Makes main content scrollable */
+  height: 100vh;
+  position: relative;
+  background-color: rgb(6, 6, 6);
+}
+
+.header h3 {
+  margin-left: 10px;
+  /* color: rgb(224, 84, 2); */
+}
+
+.nav-links {
+  display: grid;
+  margin-top: 20px;
+  margin-left: 20px;
+  row-gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+}
+
+.aside-items h3 {
+  margin-left: 20px;
+  margin-top: 25px;
+  /* display: none; */
+}
+
+.main-store {
+  border-bottom: 1px solid rgb(74, 70, 70);
+  padding-bottom: 10px;
+}
+
+.products-top-bar {
+  /* display: none; */
+  position: fixed;
+  z-index: 1;
+  background-color: rgb(65, 66, 67);
+  width: 665px;
+  height: 80px;
+  top: 80px;
+  right: 550px;
+  border-radius: 10px;
+  padding: 10px 10px;
+}
+
+.products-informations {
+  margin-left: 4px;
+  margin-top: 100px;
+  padding: 20px 20px;
+  background-color: rgb(6, 6, 6);
+}
+
+.products-info-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 650px;
+  row-gap: 20px;
+}
+
+#total-label{
+  font-size: 1.1rem;
+  position: absolute;
+  left: 20px;
+}
+
+#total-products{
+	position: absolute;
+  right: 515px;
+	top: 13px;
+}
+
+#search-product {
+  height: 35px;
+  width: 640px;
+  background-color: rgb(13, 12, 12);
+  margin: 4px;
+  border: 1px solid rgb(114, 111, 111);
+  border-radius: 8px;
+  padding: 0 30px;
+  transition: 0.4s;
+  font-size: 18px;
 
 }
 
-#search-product{
-   height: 35px;
-   width: 300px;
-   background-color: rgb(13, 12, 12);
-   margin: 10px;
-   border: 1px solid rgb(114, 111, 111);
-   border-radius: 8px;
-   padding:0 30px;
-   transition: 0.4s;
-	 font-size: 18px;
-}
-
-#search-product:focus{
-  outline-color:rgb(45, 43, 43);
+#search-product:focus {
+  outline-color: rgb(45, 43, 43);
   opacity: 0.8;
   color: white;
   /* width: 280px; */
 }
 
-
-.search-section{
-   position: relative;
-   width: 400px;
+.search-section {
+  position: relative;
+  width: 400px;
 }
 
-#search-icon{
-   position: absolute;
-   top: 16px;
-   left: 15px;
-   color:rgb(163, 162, 162);
-   width: 20px;
+#search-icon {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  color: rgb(163, 162, 162);
+  width: 20px;
 }
 
-.products-container{
-	border: 1px solid rgb(46, 45, 45);
-	background-color: rgba(88, 103, 113, 0.1);
-	padding: 20px 20px;
-	width: 300px;
-	height: 150px;
-	border-radius: 10px;
-	display:grid;
-	row-gap: 20px;
+.products-container {
+  border: 1px solid rgb(46, 45, 45);
+  background-color: rgba(88, 103, 113, 0.1);
+  padding: 20px 20px;
+  width: 300px;
+  height: 150px;
+  border-radius: 10px;
+  display: grid;
+  row-gap: 20px;
+	margin-top: 16px;
 }
 
-
-.sale-price-per-main-button,.sale-price-per-sub-button{
-	 width: 120px;
-	 height: 38px;
-	 background-color:rgba(20, 104, 240, 0.9);
-	 border: none;
-	 font-size: 1.1rem;
-	 color: rgb(255, 251, 251);
-	 margin-left:4px ;
-	 border-radius: 4px;
-	 cursor: pointer;
+.sale-price-per-main-button,
+.sale-price-per-sub-button {
+  width: 120px;
+  height: 38px;
+  background-color: rgba(10, 100, 244, 0.9);
+  border: none;
+  font-size: 1.1rem;
+  color: rgb(255, 251, 251);
+  margin-left: 4px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.sale-price-per-sub-button{
-	background-color: rgb(38, 123, 234);
+.sale-price-per-sub-button {
+  background-color: rgb(46, 128, 234);
+}
+
+.empty-container {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  font-size: 19px;
 }

@@ -19,7 +19,7 @@
         "aside main"
         ;
 
-        grid-template-columns:240px 1fr;
+        grid-template-columns:218px 1fr;
 
      }
 
@@ -217,9 +217,9 @@
 
 .create-product-link{
    width: 200px;
-   position: absolute;
-   right: 0;
-   top:13px ;
+   position: fixed;
+   right: 10px;
+   top:80px ;
   
 }
 

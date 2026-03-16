@@ -19,13 +19,13 @@
         "aside main"
         ;
 
-        grid-template-columns:240px 1fr;
+        grid-template-columns:218px 1fr;
 
      }
 
     .aside{
         grid-area: aside;
-        border-right: 1px solid gray;
+        border-right: 1px solid rgb(61, 60, 60);
         position: sticky;
         top: 0;
         height: 100vh; /* Full viewport height */
@@ -36,14 +36,14 @@
 
     .header{
         grid-area: header;
-        border-left: 1px solid gray;
+        border-left: 1px solid rgb(80, 79, 79);
         padding:20px 20px;
         background-color: rgb(20, 18, 18);
         position: sticky;
         top: 0; /* Sticks to top of main content area */
         z-index: 1; 
         height: 62px;
-        border-bottom: 2px solid rgb(100, 97, 97);
+        border-bottom: 1px solid rgb(89, 89, 89);
     }
     
     .main{
@@ -86,7 +86,7 @@
 }
 
 .main-store{
-    border-bottom: 1px solid;
+    border-bottom: 1px solid rgb(87, 86, 86);
     padding-bottom: 10px;
    }
 
@@ -104,7 +104,7 @@
     border-radius: 10px;
     border: 1px solid rgb (38, 73, 228);
     border: 1px solid rgb(56, 55, 55);
-   background-color: rgba(100, 113, 124, 0.1);
+    background-color: rgba(100, 113, 124, 0.1);
 
  }
  
