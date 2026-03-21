@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="POS.css">
+  <title>Point of sale</title>
+</head>
+
+<body>
+  <div class="page-layout">
+
+    <!-- HEADER -->
+    <header class="header">
+      <h3>POINT OF SALE</h3>
+    </header>
+
+    <!-- SIDEBAR -->
+    <aside class="aside"></aside>
+
+    <!-- PRODUCTS TOP BAR -->
+    <div class="products-top-bar">
+      <div class="total-products-container">
+        <span id="total-label">Total products:</span>
+        <span id="total-products"></span>
+      </div>
+
+      <div class="search-section">
+        <input type="search" id="search-product" placeholder="Search product...">
+        <i data-lucide="search" id="search-icon"></i>
+      </div>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="products-informations">
+      <div class="products-info-container"></div>
+    </div>
+
+    <!-- CART -->
+    <div class="cart-container">
+      <div class="cart-title">
+				<h3>Shopping Cart</h3>
+				 <button id="clear-cart">Clear Cart</button>
+				<div>
+					<span id="total-items">0</span>
+					<span>Items</span>
+				</div>
+			</div>
+      <div class="cart-items"></div>
+
+      <div class="cart-footer">
+				<div class="order-discount">
+					<span>Order Discount</span>
+					<div>
+						<input type="text" value="0" id="order-discount">
+					</div>
+				</div>
+
+        <div class="cart-total-container">
+					<span>Total amount:</span>
+					<span id="cart-total">0</span>
+				</div>
+
+				<div class="checkout-container">
+					<button id="checkout-btn">Proceed to Checkout</button>
+				</div>
+      </div>
+    </div>
+
+    <div class="empty-container"></div>
+
+  </div>
+
+  <script src="./POS.js" type="module"></script>
+  <script src="./icons.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+
+</body>
+</html>

@@ -120,13 +120,13 @@
     opacity: 0.9;
     font-size: 17px;
     margin-top: 2px;
-    border-bottom: 2px solid rgb(16, 15, 15);
-    background-color: rgb(13, 12, 12);
-    box-shadow: 1px 1px 2px rgb(52, 50, 50);
+    border-bottom: 1px solid rgb(33, 32, 32);
+    background-color: rgb(4, 4, 4);
+    
   }
 
   .rows:hover{
-    background-color: rgb(22, 21, 21);
+    background-color: rgb(14, 14, 14);
   }
  
  .product{
@@ -229,7 +229,7 @@
    color: white;
    text-align: center;
    /* background-color:#4CAF50; */
-	 background-color: #3B82F6;
+	 background-color: #3d7ce1;
 
 }
 

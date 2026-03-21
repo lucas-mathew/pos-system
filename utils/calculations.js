@@ -1,77 +1,76 @@
-import { getProducts, saveProducts } from "../data/storage.js";
+		import { getProducts, saveProducts } from "../data/products.js";
 
-export function calculateProfit(stock, salePrice, buyPrice) {
-  stock = Number(stock);
-  salePrice = Number(salePrice);
-  buyPrice = Number(buyPrice);
 
-  return (stock * salePrice - stock * buyPrice).toLocaleString();
-}
+		export function calculateProfit(stock, salePrice, buyPrice) {
+			stock = Number(stock);
+			salePrice = Number(salePrice);
+			buyPrice = Number(buyPrice);
 
-export function calculateCapital(buyPrice, stock) {
-  buyPrice = Number(buyPrice);
-  stock = Number(stock);
+			return (stock * salePrice - stock * buyPrice).toLocaleString();
+		}
 
-  return (buyPrice * stock).toLocaleString();
-}
+		export function calculateCapital(buyPrice, stock) {
+			buyPrice = Number(buyPrice);
+			stock = Number(stock);
 
-export function calculateTotalProducts() {
-  const products = getProducts();
-  return Number(products.length);
-}
+			return (buyPrice * stock).toLocaleString();
+		}
 
-export function calculateTotaCapital() {
-  const products = getProducts();
-  let total = 0;
+		export function calculateTotalProducts() {
+			const products = getProducts();
+			return Number(products.length);
+		}
 
-  products.forEach((product) => {
-    total +=
-      Number(product.pBuyPricePerMain) * Number(product.pStockPerMainUnit);
-  });
+		export function calculateTotaCapital() {
+			const products = getProducts();
+			let total = 0;
 
-  return total.toLocaleString();
-}
+			products.forEach((product) => {
+				total +=
+					Number(product.pBuyPricePerMain) * Number(product.pStockPerMainUnit);
+			});
 
-export function calculateTotalProfit() {
-  const products = getProducts();
-  let total = 0;
+			return total.toLocaleString();
+		}
 
-  for (let product of products) {
-    total +=
-      Number(product.pSalePricePerMain) * Number(product.pStockPerMainUnit) -
-      Number(product.pBuyPricePerMain) * Number(product.pStockPerMainUnit);
-  }
+		export function calculateTotalProfit() {
+			const products = getProducts();
+			let total = 0;
 
-  return total.toLocaleString();
-}
+			for (let product of products) {
+				total +=
+					Number(product.pSalePricePerMain) * Number(product.pStockPerMainUnit) -
+					Number(product.pBuyPricePerMain) * Number(product.pStockPerMainUnit);
+			}
 
-export function calculateTotalSales() {
-  let products = getProducts();
-  let total = 0;
+			return total.toLocaleString();
+		}
 
-  for (let product of products) {
-    total +=
-      Number(product.pSalePricePerMain) * Number(product.pStockPerMainUnit);
-  }
+		export function calculateTotalSales() {
+			let products = getProducts();
+			let total = 0;
 
-  return total.toLocaleString();
-}
+			for (let product of products) {
+				total +=
+					Number(product.pSalePricePerMain) * Number(product.pStockPerMainUnit);
+			}
 
-// Logic to Update stock during selling products
-export function updateStock(productId, quantitySold) {
-  const products = getProducts();
+			return total.toLocaleString();
+		}
 
-  const updateProduct = products.map((product) => {
-    if (product.id === productId) {
-      return {
-        ...product,
-        pStockPerMainUnit: product.pStockPerMainUnit - Number(quantitySold),
-      };
-    }
-    
-  return product
+		// Logic to Update stock during selling products
+		export function updateStock(productId, quantitySold) {
+			const products = getProducts();
 
-  });
-	saveProducts(updateProduct)
+			const updateProduct = products.map((product) => {
+				if (product.id === productId) {
+					return {
+						...product,
+						pStockPerMainUnit: product.pStockPerMainUnit - Number(quantitySold),
+					};
+				}
 
-}
+				return product;
+			});
+			saveProducts(updateProduct);
+		}

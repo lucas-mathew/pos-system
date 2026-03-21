@@ -1,10 +1,10 @@
-import {
+import{
   calculateTotalProducts,
   calculateTotalProfit,
   calculateTotaCapital,
   calculateTotalSales,
 } from "./utils/calculations.js";
-import { renderPage } from "./aside.js";
+import { renderPage } from "./utils/aside.js";
 
 document.querySelector(".aside").innerHTML = renderPage();
 

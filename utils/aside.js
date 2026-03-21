@@ -8,7 +8,7 @@ export function renderPage(){
             <a href="index.html">Dashboard</a>
             <a href="./create-product.html">Create products</a>
             <a href="./products.html">Products List</a>
-            <a href="./cart.html">Point of sale</a>
+            <a href="./POS.html">Point of sale</a>
         </div>
        </div>
      `
